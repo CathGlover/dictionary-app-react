@@ -12,6 +12,7 @@ export default function Definitions(response) {
           return (
             <div key={index}>
               <Meanings meaning={meaning} />
+              <br />
             </div>
           );
         })}

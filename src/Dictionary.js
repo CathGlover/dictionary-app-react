@@ -7,9 +7,7 @@ export default function Dictionary() {
   let [definitions, setDefinitions] = useState(null);
 
   function handleResponse(response) {
-    console.log(response.data[0]);
     setDefinitions(response.data[0]);
-    console.log(response.data[0].meanings[0].definitions[0].definition);
   }
 
   function search(event) {
