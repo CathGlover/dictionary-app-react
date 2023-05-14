@@ -1,13 +1,18 @@
 import React from "react";
-import Dictionary from "./Dictionary";
 import Meanings from "./Meanings";
-
+import Phonetic from "./Phonetic";
 export default function Definitions(response) {
-  console.log(response.definitions);
   if (response.definitions) {
     return (
       <div>
         <h2>{response.definitions.word}</h2>
+        {response.definitions.phonetics.map(function (phonetic, index) {
+          return (
+            <div key={index}>
+              <Phonetic phonetic={phonetic} />
+            </div>
+          );
+        })}
         {response.definitions.meanings.map(function (meaning, index) {
           return (
             <div key={index}>
